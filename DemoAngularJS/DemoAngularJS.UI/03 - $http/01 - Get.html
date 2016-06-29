@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Usando HTTP Get</title>
+    <meta charset="utf-8" />
+    <style>
+        .erro {
+            margin: 30px;
+            padding: 30px;
+            background-color: #fab4b4;
+            font-size:1.25em;
+            text-align:center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Consumindo a api do inferno</h1>
+
+    <div ng-controller="gitController as vm">
+
+        <div ng-show="vm.erro!=null" class="erro">
+            Atenção - Erro <br>
+            <span>Código do erro: {{vm.erro.status}}</span>
+            <br />
+            <span>Mensagem: {{vm.erro.mensagem}}</span>
+        </div>
+
+        <div>
+            ID: {{vm.dados.id}}
+        </div>
+
+        <div>
+            Nome: {{vm.dados.nome}}
+        </div>
+
+        <div>
+            Idade: {{vm.dados.idade}}
+        </div>
+    </div>
+
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+        (function () {
+            "use strict";
+
+            angular
+                .module("app", [])
+                .controller("gitController", GitCtrl);
+
+            GitCtrl.$inject = ["$http"];
+            function GitCtrl($http) {
+                var self = this;
+                $http
+                    .get("http://localhost:29974/api/clientes")
+                    .then(onSuccess, onError);
+
+                function onSuccess(resposta) {
+                    self.dados = resposta.data[0];
+                }
+
+                function onError(resposta) {
+                    self.erro = { status: resposta.status, mensagem: resposta.statusText };
+                }
+
+            }
+
+        }());
+    </script>
+</body>
+</html>

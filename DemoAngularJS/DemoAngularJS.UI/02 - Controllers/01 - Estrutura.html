@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="minhaApp">
+<head>
+    <title>Estrutura</title>
+    <meta charset="utf-8" />
+</head>
+<body ng-controller="mainController">
+    <h1>{{msg}}</h1>
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+        //Criar módulo
+        angular
+            .module("minhaApp", [])
+            //Criando Controller
+            .controller("mainController", function ($scope) {
+                //alert("teste");
+                //$scope = componente do angular
+                $scope.msg = "Teste";
+            });
+    </script>
+</body>
+</html>

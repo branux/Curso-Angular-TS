@@ -1,0 +1,22 @@
+{
+  "name": "05 - routes",
+  "authors": [
+    "Fabiano Alberto Nalin <fnalin@msn.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.7",
+    "bootstrap": "^3.3.6"
+  }
+}

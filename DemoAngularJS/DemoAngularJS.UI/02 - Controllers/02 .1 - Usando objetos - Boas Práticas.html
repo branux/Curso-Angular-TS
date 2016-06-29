@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="app.teste">
+<head>
+    <title>Usando objetos</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Objetos c/ angular</h1>
+
+    <div ng-controller="pessoaController as vm">
+        <div>
+            ID: {{vm.pessoa.id}}
+        </div>
+        <div>
+            Nome: {{vm.pessoa.nome}}
+        </div>
+        <div>
+            Idade: {{vm.pessoa.idade}}
+        </div>
+    </div>
+
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+        (function () {
+            "use strict";
+
+            angular.module("app.teste", [])
+                .controller("pessoaController", function () {
+                    var dados = {};
+                    dados.id = 1;
+                    dados.nome = "Nilson";
+                    dados.idade = 24;
+                    this.pessoa = { id: 2, nome: "Feliciano", idade: 15, telefones: [] };
+                });
+        }());
+    </script>
+
+</body>
+</html>

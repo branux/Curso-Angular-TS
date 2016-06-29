@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html ng-app="app.teste">
+<head>
+    <title>Usando objetos</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Objetos c/ angular</h1>
+
+    <div ng-controller="pessoaController">
+        <div>
+            ID: {{pessoa.id}}
+        </div>
+        <div>
+            Nome: {{pessoa.nome}}
+        </div>
+        <div>
+            Idade: {{pessoa.idade}}
+        </div>
+    </div>
+
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+        (function () {
+            "use strict";
+
+            angular.module("app.teste", [])
+                .controller("pessoaController", function ($scope) {
+
+                    var dados = {};
+                    dados.id = 1;
+                    dados.nome = "Nilson";
+                    dados.idade = 24;
+
+                    $scope.pessoa = { id: 2, nome: "Feliciano", idade: 15, telefones: [] };
+
+                });
+
+
+        }());
+    </script>
+
+</body>
+</html>

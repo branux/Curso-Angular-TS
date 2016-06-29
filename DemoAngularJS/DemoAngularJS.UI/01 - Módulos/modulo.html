@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="minhaApp">
+<head>
+    <title>Usando Módulo</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script src="../Scripts/angular.js"></script>
+
+    <script>
+        //Criando um módulo
+        angular.module("minhaApp",[]);
+
+        //Consumir módulo
+        var meuModulo = angular.module("minhaApp");
+        console.log(typeof meuModulo);
+        console.log(meuModulo.name);
+    </script>
+
+
+</body>
+</html>

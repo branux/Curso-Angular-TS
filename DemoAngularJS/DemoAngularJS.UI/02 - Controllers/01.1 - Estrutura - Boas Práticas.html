@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app="minhaApp">
+<head>
+    <title>Estrutura</title>
+    <meta charset="utf-8" />
+</head>
+<body ng-controller="mainController">
+    <h1>{{msg}}</h1>
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+        //Criar módulo
+        (function () {
+            "use strict";
+
+            var teste = 0;
+            console.log(teste);
+
+            angular
+            .module("minhaApp", [])
+            //Criando Controller
+            .controller("mainController", function ($scope) {
+                //alert("teste");
+                //$scope = componente do angular
+                $scope.msg = "Teste";
+                var teste = 1;
+                console.log(teste);
+            });
+
+            console.log(teste);
+        }());
+        
+    </script>
+
+    <script>
+
+        //closure
+        //IIFE ==> fecha o escopo e se auto executa
+        //(function () { }());
+
+        //Escopo fechado mas não é executado automaticamente
+        function Teste() {
+            var senha = "123";
+        }
+    </script>
+</body>
+</html>
